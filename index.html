@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Food&Travel</title>
+    <script src="js/facebooklogin.js"></script>
     <!--Boostrap's CSS-->
     <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <!--Custom CSS-->
@@ -11,6 +12,8 @@
   </head>
 
   <body>
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+	<div id="status"></div>
     <div class="container">
         <h1 align="center">Food & Travel</h1>
     </div>
@@ -18,5 +21,6 @@
     </div>
     <div>
     </div>
+    
   </body>
 </html>
