@@ -1,75 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Food&Travel</title>
+    <head>
+        <title>Food & Travel</title>
 
-    <!-- Include the fakeLoader.css -->
-    <link rel="stylesheet" type="text/css" href="css/fakeLoader.css">
+        <!-- Include the fakeLoader.css -->
+        <link rel="stylesheet" type="text/css" href="css/fakeLoader.css">
+        <!-- Include the sweetalert.css -->
+        <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
 
-    <!-- Include the sweetalert.css -->
-    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+        <script src="js/facebooklogin.js"></script>
 
-    <script src="js/facebooklogin.js"></script>
+        <!--Boostrap's CSS-->
+        <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <!--Custom CSS-->
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+    </head>
 
-    <!--Boostrap's CSS-->
-    <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <!--Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <body>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" style="top:10px;left:10px"></fb:login-button>
+	    <div id="status"></div>
+        <div class="container" id="page-container">
+            <h1 id="app-name" style="color:#5BFF33">
+                <span class="glyphicon glyphicon-cutlery" style="color:yellow"></span> Food & Travel<span class="glyphicon glyphicon-plane" style="color:#33DDFF"></span>
+            </h1>
+            <!-- NB: glyphicon halflings are generally not free, but the developer made them free in bootstrap -->
 
-    <!--meta name="viewport" content="width=device-width, initial-scale=1"-->
-  </head>
+            <h2 id="page-header">
+                Find a food or travel you may like.
+            </h2>
+            <img id="selected-img" src="">
+            <h4 id="track-name"></h4>
 
+            <div class="btn-wrapper">
+                <label class="btn btn-info" for="my-file-selector">
+                    <input id="my-file-selector" type="file">
+                    Upload a picture of you
+                </label>
+                <button type="button" class="btn btn-warning" id="sweetalert">Go Back</button>
+            </div>
+            
+        </div>
+        <!-- 
+            NB: You generally do not want to publically expose the server structure (eg. ./node_modules/...)
+            will sort that in later bootcamps with task-runners and the like.
+            For now this is just a demonstration.
+            Alternatively can use CDNs for bootstrap/jquery
+        -->
 
-  <body>
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-	<div id="status"></div>
-    <div class="container">
-        <h1 id="icon"><span class="glyphicons glyphicons-cutlery"></span></h1>
-        <h1 align="center">Food & Travel</h1>
-        <h1><span class="glyphicons glyphicons-luggage"></span></h1>
-    </div>
-    <div>
-    </div>
-    <div>
-    </div>
-    <div id="fakeLoader"></div>
-    <button id="sweetalert">Go Back</button>
+        <!--jQuery Script-->
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <!--Bootstrap Script-->
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!--Custom Script-->
+        <script src="./js/main.js"></script>
+
+        <div id="fakeLoader"></div>
     
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <!-- Include the fakeLoader.js -->
-    <script src="js/fakeLoader.min.js"></script>
-    <!-- Include the sweetalert -->
-    <script src="js/sweetalert.min.js"></script>
-    
-    <!-- Using fakeLoader -->
-    <script type="text/javascript">
-        $("#fakeLoader").fakeLoader({
-            // imagePath:"yourPath/customizedImage.gif", //If you want can you insert your custom image
-            timeToHide: 1000,        // Animation lasts 1000 ms
-            zIndex: 999,            // Make sure that the loader is always on top of any other elements
-            spinner: "spinner2",    // Change spinner animation
-            bgColor: "#5c2d91"        // Custom background colour
-        });
-    </script>
-    <!-- Using sweetalert -->
-    <script>
-        $("#sweetalert").click(function () {
-            swal({
-                title: "Are you sure?",
-                text: "you want to go back?",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#5c2d91",
-                confirmButtonText: "Yes",
-                closeOnConfirm: false
-            },
-            function Redirect() {
-               window.location="index.html";
-            }
-				);
-        });
-    </script>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <!-- Include the fakeLoader.js -->
+        <script src="js/fakeLoader.min.js"></script>
+        <!-- Include the sweetalert -->
+        <script src="js/sweetalert.min.js"></script>
+        
+        <!-- Using fakeLoader -->
+        <script type="text/javascript">
+            $("#fakeLoader").fakeLoader({
+                // imagePath:"yourPath/customizedImage.gif", //If you want can you insert your custom image
+                timeToHide: 1000,        // Animation lasts 1000 ms
+                zIndex: 999,            // Make sure that the loader is always on top of any other elements
+                spinner: "spinner2",    // Change spinner animation
+                bgColor: "#33DDFF"        // Custom background colour
+            });
+        </script>
+        <!-- Using sweetalert -->
+        <script>
+            $("#sweetalert").click(function () {
+                swal({
+                    title: "Are you sure?",
+                    text: "you want to go back?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#5c2d91",
+                    confirmButtonText: "Yes",
+                    closeOnConfirm: false
+                },
+                function Redirect() {
+                window.location="index.html";
+                }
+                    );
+            });
+        </script>                   
 
-  </body>
+    </body>
 </html>

@@ -7,29 +7,6 @@ var refreshbtn = $("#refreshbtn");
 
 // Register event listeners
 imgSelector.on("change", function () {
-    pageheader.html("Just a sec while we analyse...");
-    setTimeout(changeUI, 2000); //some external call would happen here, add 2 sec delay to simulate
-                                //can implement jquery loading plugin
-});
-refreshbtn.on("click", function () {
-    // Load random song based on mood
-    alert("You clicked the button"); //can demo with sweetAlert plugin
-});
-
-// Manipulate the DOM
-function changeUI() {
-    //Show detected mood
-    pageheader.html("You feel like: ");
-
-    //Display song refresh button
-    refreshbtn.css("display", "inline");
-
-    //Remove offset at the top
-    pagecontainer.css("marginTop", "20px");
-};
-
-// Register event listeners
-imgSelector.on("change", function () {
     pageheader.innerHTML = "Just a sec while we analyse your mood..."; //good to let your user know something is happening!
     processImage(function (file) { //this checks the extension and file
         // Get emotions based on image
@@ -139,4 +116,3 @@ function sendEmotionRequest(file, callback) {
             console.log(error.getAllResponseHeaders());
         });
 }
-

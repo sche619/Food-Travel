@@ -45,3 +45,9 @@ body #page-container {
 input#my-file-selector {
     display:none;
 }
+
+#status {
+    top:15px;
+    left:10px;
+    position:relative;
+}
