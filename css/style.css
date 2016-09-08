@@ -51,3 +51,6 @@ input#my-file-selector {
     left:10px;
     position:relative;
 }
+#sweetalert {
+    display:none;
+}

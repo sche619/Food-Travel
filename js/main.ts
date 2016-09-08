@@ -6,7 +6,7 @@ var pagecontainer = $("#page-container")[0];
 
 // The html DOM object has been casted to a input element (as defined in index.html) as later we want to get specific fields that are only avaliable from an input element object
 var imgSelector : HTMLInputElement = <HTMLInputElement> $("#my-file-selector")[0]; 
-var refreshbtn = $("#refreshbtn")[0]; //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
+var refreshbtn = $("#sweetalert")[0]; //You dont have to use [0], however this just means whenever you use the object you need to refer to it with [0].
 
 // Register button listeners
 imgSelector.addEventListener("change", function () { // file has been picked
@@ -56,7 +56,7 @@ function changeUI() : void {
     img.style.display = "block"; //just some formating of the emoji's location
 
     //Display song refresh button
-    /*refreshbtn.style.display = "inline";*/
+    refreshbtn.style.display = "inline";
     
     //Remove offset at the top
     pagecontainer.style.marginTop = "20px";
