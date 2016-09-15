@@ -53,7 +53,7 @@ function processImage(callback) {
 /* 4. Updating the UI */
 function changeUI() {
     //Show detected mood
-    pageheader.innerHTML = "You feel like: "; //Remember currentMood is a Mood object, which has a name and emoji linked to it. 
+    pageheader.innerHTML = "You look like " + age + " years old. You feel like: "; //Remember currentMood is a Mood object, which has a name and emoji linked to it. 
     //Show mood emoji
     var img = $("#selected-img")[0]; //getting a predefined area on our webpage to show the emoji
     img.src = recommendation.picture; //link that area to the emoji of our currentMood.
