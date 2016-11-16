@@ -1,7 +1,7 @@
 # Food-Travel
 
-build and posted on foodtravel.azurewebsites.net
+built and posted on foodtravel.azurewebsites.net
 
 This website detects the human face uploaded and make a suggestion on 
-- food you may like or 
-- place you would like to travel
+- food one may like or 
+- place one would like to travel
